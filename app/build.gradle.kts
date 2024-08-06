@@ -71,6 +71,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    //coroutine
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
     //Compose Navigation Dependency
     implementation(libs.androidx.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
