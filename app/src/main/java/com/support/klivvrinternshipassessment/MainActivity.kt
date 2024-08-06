@@ -6,22 +6,24 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.support.klivvrinternshipassessment.feature.home.presentation.screen.HomeScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Navigation()
+            Navigation(this)
         }
     }
 }
 
 @Composable
-fun Navigation() {
+fun Navigation(context: MainActivity) {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "home") {
-
+        composable("home") { HomeScreen(context) {} }
     }
 }
