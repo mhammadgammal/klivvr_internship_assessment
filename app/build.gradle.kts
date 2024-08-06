@@ -82,5 +82,8 @@ dependencies {
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
+
+    //Gson
+    implementation(libs.gson)
 }
 apply(plugin = "dagger.hilt.android.plugin")
