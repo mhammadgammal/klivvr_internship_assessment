@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.dagger.hilt.plugin)
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.kotlinx.serialization)
+    alias(libs.plugins.google.gms.google.services)
+//    id("com.google.maps.android.secrets") version "2.0.1"
 }
 
 android {
@@ -88,5 +90,20 @@ dependencies {
 
     //Gson
     implementation(libs.gson)
+    // Google Maps SDK -- these are here for the data model.  Remove these dependencies and replace
+    // with the compose versions.
+    implementation(libs.play.services.maps)
+    // KTX for the Maps SDK for Android library
+    implementation(libs.maps.ktx)
+    // KTX for the Maps SDK for Android Utility Library
+    implementation(libs.maps.utils.ktx)
+
+    // Google Maps Compose library
+    implementation(libs.maps.compose)
+    // Google Maps Compose utility library
+    implementation(libs.maps.compose.utils)
+    // Google Maps Compose widgets library
+    implementation(libs.maps.compose.widgets)
+
 }
 apply(plugin = "dagger.hilt.android.plugin")
