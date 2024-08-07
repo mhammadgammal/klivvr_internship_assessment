@@ -2,7 +2,9 @@ package com.support.klivvrinternshipassessment.feature.home.presentation.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -14,6 +16,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
@@ -60,9 +63,15 @@ fun HomeScreen(onCityClicked: (Coord) -> Unit) {
                 vm.onSearch(it)
             })
 
-        LazyColumn {
-            items(cities.value) {
-                CityCard(city = it, onCityClicked = onCityClicked)
+        if (cities.value.isNotEmpty()) {
+            LazyColumn {
+                items(cities.value) {
+                    CityCard(city = it, onCityClicked = onCityClicked)
+                }
+            }
+        } else {
+            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                Text(text = "No result found for: ${search.value}", fontSize = 30.sp)
             }
         }
     }
