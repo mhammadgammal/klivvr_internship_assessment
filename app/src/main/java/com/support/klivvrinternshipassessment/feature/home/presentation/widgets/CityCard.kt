@@ -26,7 +26,7 @@ fun CityCard(city: CityModel, onCityClicked: (Coord) -> Unit) {
         onClick = { onCityClicked(city.coord) },
         modifier = Modifier
             .padding(
-                top = 50.dp,
+                top = 40.dp,
                 start = 10.dp,
                 end = 10.dp
             )

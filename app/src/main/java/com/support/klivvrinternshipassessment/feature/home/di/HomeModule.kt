@@ -1,6 +1,7 @@
 package com.support.klivvrinternshipassessment.feature.home.di
 
 import android.content.Context
+import com.support.klivvrinternshipassessment.feature.home.data.repository.HomeRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,4 +14,9 @@ object HomeModule {
 
     @Provides
     fun provideContext(@ApplicationContext context: Context): Context = context
+
+    @Provides
+    fun provideHomeRepository(@ApplicationContext context: Context): HomeRepository =
+        HomeRepository(context)
+
 }
