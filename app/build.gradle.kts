@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.dagger.hilt.plugin)
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.kotlinx.serialization)
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -22,6 +23,10 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        // build config field to protect API Key
+        android.buildFeatures.buildConfig = true
+        buildConfigField("String", "API_KEY", "\"${project.properties["API_KEY"]}\"")
     }
 
     buildTypes {
