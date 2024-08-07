@@ -35,7 +35,7 @@ fun MapScreen(coord: Coord) {
         GoogleMap(
             modifier = Modifier.fillMaxSize(),
             cameraPositionState = rememberCameraPositionState {
-                position = CameraPosition.fromLatLngZoom(LatLng(coord.lon, coord.lat), 3f)
+                position = CameraPosition.fromLatLngZoom(LatLng(coord.lon, coord.lat), 8f)
             },
             onMapLoaded = { isMapLoaded = true }
         ) {
