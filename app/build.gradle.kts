@@ -4,8 +4,6 @@ plugins {
     alias(libs.plugins.dagger.hilt.plugin)
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.kotlinx.serialization)
-    alias(libs.plugins.google.gms.google.services)
-//    id("com.google.maps.android.secrets") version "2.0.1"
 }
 
 android {
@@ -14,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.support.klivvrinternshipassessment"
-        minSdk = 21
+        minSdk = 23
         //noinspection OldTargetApi
         targetSdk = 34
         versionCode = 1
