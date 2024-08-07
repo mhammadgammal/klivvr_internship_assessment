@@ -29,7 +29,7 @@ class BinarySearchTree {
     fun search(query: String): List<CityModel> {
         val result = mutableListOf<CityModel>()
         searchRec(root, query, result)
-        return result
+        return mergeSort(result)
     }
 
     private fun searchRec(root: TreeNode?, query: String, result: MutableList<CityModel>) {
